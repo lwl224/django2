@@ -250,13 +250,13 @@ def loop():
     # print  date1
     datestr='data'
     loading()
-    # getexcel(url_rru, para_dict_rru, '/%s/rru' % (datestr))
-    # getexcel(url_cell, para_dict_cell, '/%s/cell' % (datestr))
-    # getexcel(url_enodeb, para_dict_enodeb, '/%s/enodeb' % (datestr))
-    # getexcel(url_PhysicallStation, para_dict_PhysicallStation, '/%s/physicalstation' % (datestr))
-    # getexcel(url_antenna, para_dict_antenna, '/%s/antenna' % (datestr))
-    # getexcel(url_bbu, para_dict_bbu, '/%s/bbu' % (datestr))
-    # getexcel(url_scenes, para_dict_scenes, '/%s/scenes' % (datestr))
+    getexcel(url_rru, para_dict_rru, '/%s/rru' % (datestr))
+    getexcel(url_cell, para_dict_cell, '/%s/cell' % (datestr))
+    getexcel(url_enodeb, para_dict_enodeb, '/%s/enodeb' % (datestr))
+    getexcel(url_PhysicallStation, para_dict_PhysicallStation, '/%s/physicalstation' % (datestr))
+    getexcel(url_antenna, para_dict_antenna, '/%s/antenna' % (datestr))
+    getexcel(url_bbu, para_dict_bbu, '/%s/bbu' % (datestr))
+    getexcel(url_scenes, para_dict_scenes, '/%s/scenes' % (datestr))
     getexcel(url_cell2scenes, para_dict_cell2scenes, '/%s/cell2scenes' % (datestr))
 
     # getexcel(url_construction2scenes, para_dict_construction2scenes, '/%s/construction2scenes' % (datestr))

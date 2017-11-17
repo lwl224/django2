@@ -133,15 +133,46 @@ def makedata():
     n = cursor.execute(sql)
     map1 = {}
     for row in cursor.fetchall():
-        if not map1.has_key(row[4]):
-            map1[row[4]] = [row[0]]
-        else:
-            key1 = row[4]
-            vel1 = row[0]
-            list1 = map1[key1]
-            list1.append(vel1)
-            map1[row[4]] = list1
-    map2 = map1
+        if row[4]:
+            if not map1.has_key(row[4]):
+                map1[row[4]] = [row[0]]
+            else:
+                key1 = row[4]
+                if key1:
+                    vel1 = row[0]
+                    list1 = map1[key1]
+                    list1.append(vel1)
+                    map1[row[4]] = list1
+    foreach(map1)
+
+
+def foreach(map1):
+    s = 0
+    sql1 = ''
+    sql2 = ''
+    for key, value in map1.items():
+
+        if len(value) > 1:
+            julilist = []
+            for index1, value1 in enumerate(value):
+                for index2, value2 in enumerate(value):
+                    if index1 < index2 and index1 < len(value) - 1:
+                        cell1 = Ltecell.objects.filter(cellid1=value1)[0]
+                        cell2 = Ltecell.objects.filter(cellid1=value2)[0]
+                        julilist.append(juli(cell1.lat, cell1.lon, cell2.lat, cell2.lon))
+            if key == '1100109_00017':
+                pass
+            if max(julilist) > 0:
+                print key + "---->" + str(max(julilist))
+            # if 0 < max(julilist) < 10:
+            #     sql1 = sql1 + '|' + key
+            if max(julilist) > 0:
+                sql2 = sql2 + '|' + key
+        s = s + 1
+        if s % 5000 == 1:
+            print '---------------------------------------------------------------------------'
+    print
+    print sql2[1:]
 
 
 makedata()

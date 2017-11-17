@@ -10,9 +10,9 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 import django
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django1.settings")
-django.setup()
+if __name__ == "__main__":
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django1.settings")
+    django.setup()
 from books.models import Ltecell
 import xlrd
 import time
