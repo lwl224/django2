@@ -120,7 +120,7 @@ def juli(clat, clon, rlat, rlon):
 def makedata():
     connect_dict = {
         'host': '127.0.0.1',
-        'user': 'lwl224',
+        'user': 'root',
         'passwd': '123456',
         'port': 3306,
         'db': 'lwl224',

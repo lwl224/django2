@@ -10,7 +10,6 @@ import urllib2
 import cookielib
 import time
 import datetime
-import csv
 import os
 
 reload(sys)
