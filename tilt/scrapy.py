@@ -155,8 +155,8 @@ url_delete = 'http://10.245.0.91:10101/wonop/wonop/config/maintain/query/config_
 para_dict_delete = {
     'objectTypeId': 'L00805',
     'objectIds': '110.703882.5',
-    'selectedDelTypes': 'L00863,L00862,CON02' #selectedDelTypes: antenna->L00863,bbu->L00861,rru->L00862,PhysicallStation->L00864,cell2scenes->CON02,construction2scenes->CON03,
-
+    'selectedDelTypes': 'L00863,L00862,CON02'
+    # selectedDelTypes: antenna->L00863,bbu->L00861,rru->L00862,PhysicallStation->L00864,cell2scenes->CON02,construction2scenes->CON03,
 
 }
 
@@ -236,6 +236,23 @@ def delete_data_cell(url, para_dict):
     print res.msg
 
 
+def modify_nocheck(para_dict):
+    url = 'http://10.245.0.91:10101/wonop/wonop/config/maintain/detail/config_maintain_property_modify_nocheck.action'
+    cookie = cookielib.MozillaCookieJar()
+    cookie.load('cookie.txt', ignore_discard=True, ignore_expires=True)
+    handler = urllib2.HTTPCookieProcessor(cookie)
+    opener = urllib2.build_opener(handler)
+    opener.addheaders = [("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0")]
+    urllib2.install_opener(opener)
+    timeflag = time.time()
+    timeflag = str(timeflag).split('.')[0]
+    str1 = 'maintain_query_' + timeflag+'000'
+    para_dict['key'] = str1
+    para_data = urllib.urlencode(para_dict)
+    req = urllib2.Request(url, para_data)
+    res = urllib2.urlopen(req)
+
+
 def loop():
     date1 = '2017-11-14'
     str1 = '{"period":"8","timeList":["%s 00:00:00"]}' % (date1)
@@ -247,7 +264,7 @@ def loop():
     # para_dict['date'] = yesterday
     para_dict_cell['date'] = date1
     # print  date1
-    datestr='data'
+    datestr = 'data'
     loading()
     getexcel(url_rru, para_dict_rru, '/%s/rru' % (datestr))
     getexcel(url_cell, para_dict_cell, '/%s/cell' % (datestr))

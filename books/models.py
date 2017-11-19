@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import MySQLdb
 from django.db import models
 from django.contrib.auth.models import User
 
-
 # Create your models here.
+from tilt.scrapy import modify_nocheck
+
 
 class Publisher(models.Model):
     name = models.CharField(max_length=30)
@@ -193,6 +195,47 @@ class Ltecell(models.Model):
             self.customize8 = args[73]
             self.customize9 = args[74]
             self.customize10 = args[75]
+
+    def syn(self):
+        connect_dict = {
+            'host': '127.0.0.1',
+            'user': 'root',
+            'passwd': '123456',
+            'port': 3306,
+            'db': 'lwl224',
+            'use_unicode': 'True',
+            'charset': 'utf8'
+        }
+        conn = MySQLdb.connect(**connect_dict)
+        cursor = conn.cursor()
+        sql = "SELECT * FROM books_rru WHERE   cellid1 =" + self.cellid1 + "   ORDER BY physicalstationid DESC"
+        n = cursor.execute(sql)
+        para_dict = {
+            'timestamp': '1511059747000',
+            'objectTypeId': 'L00862',
+            'complaintId': 'null',
+            'objectId': '110.110.698043.3',
+            'cell_4g': '',
+            'cell_3g': '',
+            'cell_2g': '',
+            'test': '',
+            'RRU_ID': '110.698043.3',
+            'LC_NAME': 'GX南宁宾阳职业技术学校_FLTE1800基站_F_3',
+            'PROVINCE_ID': '110',
+            'CITY_ID': '11001',
+            'DISTRICT_ID': '1100126',
+            'LONGITUDE': '108.855926',
+            'LATITUDE': '23.236786',
+            'RELATED_BBU_ID': '46001698043',
+            'RELATED_CELL': '110.698043.3',
+            'PHY_ID': '1100126_00425',
+            'RRU_MODEL': '1',
+            'RRU_PORT': '1',
+            'TX_RX_MODE': '3'}
+        try:
+            modify_nocheck(para_dict)
+        except:
+            raise ValueError('input error!')
 
 
 class Antenna(models.Model):
