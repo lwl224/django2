@@ -81,4 +81,4 @@ def initialization():
     time2 = time.time()
     print "导入数据耗时" + str(time2 - time1) + "秒,"
 
-initialization()
+# initialization()
