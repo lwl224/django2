@@ -175,4 +175,4 @@ def foreach(map1):
     print sql2[1:]
 
 
-makedata()
+# makedata()
