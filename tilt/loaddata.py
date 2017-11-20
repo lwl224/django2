@@ -51,7 +51,7 @@ def loaddata(classname='Ltecell', filename='cell.xlsx', list1=[14, 15]):
                 #     if row[15].strip() == '':
                 #         row[15] = 0.0
                 row = foreachadd(list1, row)
-                aa=theObj()
+                # aa=theObj()
                 WorkList.append(theObj().init1(row))
                 y = y + 1  # 非重复计数
             else:
