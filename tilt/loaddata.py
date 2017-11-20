@@ -51,6 +51,7 @@ def loaddata(classname='Ltecell', filename='cell.xlsx', list1=[14, 15]):
                 #     if row[15].strip() == '':
                 #         row[15] = 0.0
                 row = foreachadd(list1, row)
+                aa=theObj()
                 WorkList.append(theObj().init1(row))
                 y = y + 1  # 非重复计数
             else:
@@ -69,7 +70,7 @@ def loaddata(classname='Ltecell', filename='cell.xlsx', list1=[14, 15]):
 
 def initialization():
     time1 = time.time()
-    loaddata('Bbu', 'tilt/data/bbu.xlsx', [6, 7])
+    loaddata('Bbu', 'data/bbu.xlsx', [6, 7])
     loaddata('Enodeb', 'tilt/data/enodeb.xlsx', [33, 34])
     loaddata('Ltecell','tilt/data/cell.xlsx',[14,15])
     loaddata('Antenna', 'tilt/data/antenna.xlsx', [5, 6, 10, 11])
@@ -79,3 +80,5 @@ def initialization():
     loaddata('Physicalstation', 'tilt/data/physicalstation.xlsx', [6, 7])
     time2 = time.time()
     print "导入数据耗时" + str(time2 - time1) + "秒,"
+
+initialization()

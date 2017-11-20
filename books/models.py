@@ -117,84 +117,86 @@ class Ltecell(models.Model):
 
     def init1(self, *args):
         # super(Ltecell, self).__init__()
-        if type(args[0]) is list:  # object is being created, thus no primary key field yet
-            args = args[0]
-            self.cellname = args[0]
-            self.cellid1 = args[1]
-            self.cellomcname = args[2]
-            self.province = args[3]
-            self.city = args[4]
-            self.district = args[5]
-            self.villages = args[6]
-            self.enodebid = args[7]
-            self.cellid2 = args[8]
-            self.sector = args[9]
-            self.eutranCellid = args[10]
-            self.factory = args[11]
-            self.villagestypes = args[12]
-            self.MR = args[13]
-            self.lon = args[14]
-            self.lat = args[15]
-            self.antennaid = args[16]
-            self.antennanum = args[17]
-            self.worktypes = args[18]
-            self.cp = args[19]
-            self.subframe = args[20]
-            self.specificsubframe = args[21]
-            self.remoterru = args[22]
-            self.upfpoint = args[23]
-            self.downfpoint = args[24]
-            self.pci = args[25]
-            self.pcilist = args[26]
-            self.cellmaxpower = args[27]
-            self.rspower = args[28]
-            self.atypepower1 = args[29]
-            self.btypepower1 = args[30]
-            self.atypepower2 = args[31]
-            self.btypepower2 = args[32]
-            self.bcchpower = args[33]
-            self.maxpower = args[34]
-            self.tac = args[35]
-            self.taclist = args[36]
-            self.operation = args[37]
-            self.coveragetypes = args[38]
-            self.coveragerange = args[39]
-            self.plmn = args[40]
-            self.mbms = args[41]
-            self.band = args[42]
-            self.centerfrequency = args[43]
-            self.bandwidth = args[44]
-            self.downCyclicPrefix = args[45]
-            self.upCyclicPrefix = args[46]
-            self.upbandwidth = args[47]
-            self.downbandwidth = args[48]
-            self.astat = args[49]
-            self.hs = args[50]
-            self.txrxmod = args[51]
-            self.worktypes1 = args[52]
-            self.leadingformat = args[53]
-            self.isblocking = args[54]
-            self.boundarycell = args[55]
-            self.boundaryname = args[56]
-            self.csbf = args[57]
-            self.hs2 = args[58]
-            self.istelecom = args[59]
-            self.build = args[60]
-            self.sharingmode = args[61]
-            self.isca = args[62]
-            self.catypes = args[63]
-            self.catypeassociation = args[64]
-            self.camaincellid = args[65]
-            self.customize1 = args[66]
-            self.customize2 = args[67]
-            self.customize3 = args[68]
-            self.customize4 = args[69]
-            self.customize5 = args[70]
-            self.customize6 = args[71]
-            self.customize7 = args[72]
-            self.customize8 = args[73]
-            self.customize9 = args[74]
-            self.customize10 = args[75]
+        if args:
+            if type(args[0]) is list:  # object is being created, thus no primary key field yet
+                args = args[0]
+                self.cellname = args[0]
+                self.cellid1 = args[1]
+                self.cellomcname = args[2]
+                self.province = args[3]
+                self.city = args[4]
+                self.district = args[5]
+                self.villages = args[6]
+                self.enodebid = args[7]
+                self.cellid2 = args[8]
+                self.sector = args[9]
+                self.eutranCellid = args[10]
+                self.factory = args[11]
+                self.villagestypes = args[12]
+                self.MR = args[13]
+                self.lon = args[14]
+                self.lat = args[15]
+                self.antennaid = args[16]
+                self.antennanum = args[17]
+                self.worktypes = args[18]
+                self.cp = args[19]
+                self.subframe = args[20]
+                self.specificsubframe = args[21]
+                self.remoterru = args[22]
+                self.upfpoint = args[23]
+                self.downfpoint = args[24]
+                self.pci = args[25]
+                self.pcilist = args[26]
+                self.cellmaxpower = args[27]
+                self.rspower = args[28]
+                self.atypepower1 = args[29]
+                self.btypepower1 = args[30]
+                self.atypepower2 = args[31]
+                self.btypepower2 = args[32]
+                self.bcchpower = args[33]
+                self.maxpower = args[34]
+                self.tac = args[35]
+                self.taclist = args[36]
+                self.operation = args[37]
+                self.coveragetypes = args[38]
+                self.coveragerange = args[39]
+                self.plmn = args[40]
+                self.mbms = args[41]
+                self.band = args[42]
+                self.centerfrequency = args[43]
+                self.bandwidth = args[44]
+                self.downCyclicPrefix = args[45]
+                self.upCyclicPrefix = args[46]
+                self.upbandwidth = args[47]
+                self.downbandwidth = args[48]
+                self.astat = args[49]
+                self.hs = args[50]
+                self.txrxmod = args[51]
+                self.worktypes1 = args[52]
+                self.leadingformat = args[53]
+                self.isblocking = args[54]
+                self.boundarycell = args[55]
+                self.boundaryname = args[56]
+                self.csbf = args[57]
+                self.hs2 = args[58]
+                self.istelecom = args[59]
+                self.build = args[60]
+                self.sharingmode = args[61]
+                self.isca = args[62]
+                self.catypes = args[63]
+                self.catypeassociation = args[64]
+                self.camaincellid = args[65]
+                self.customize1 = args[66]
+                self.customize2 = args[67]
+                self.customize3 = args[68]
+                self.customize4 = args[69]
+                self.customize5 = args[70]
+                self.customize6 = args[71]
+                self.customize7 = args[72]
+                self.customize8 = args[73]
+                self.customize9 = args[74]
+                self.customize10 = args[75]
+        return self
 
     def syn(self):
         connect_dict = {
@@ -317,7 +319,7 @@ class Antenna(models.Model):
     install = models.CharField(max_length=20)
 
     def init1(self, *args):
-        # super(Ltecell, self).__init__()
+        # super(Antenna, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -351,6 +353,7 @@ class Antenna(models.Model):
                 self.txrxmod = args[27]
                 self.verticalrange = args[28]
                 self.install = args[29]
+        return self
 
 
 class Cell2scenes(models.Model):
@@ -360,8 +363,8 @@ class Cell2scenes(models.Model):
     cellid1 = models.CharField(max_length=30)
     networktype = models.CharField(max_length=20)
 
-    def __init__(self, *args):
-        super(Cell2scenes, self).__init__()
+    def init1(self, *args):
+        # super(Cell2scenes, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -370,7 +373,7 @@ class Cell2scenes(models.Model):
                 self.scenesid = args[2]
                 self.cellid1 = args[3]
                 self.networktype = args[4]
-
+        return self
 
 class Scenes(models.Model):
     province = models.CharField(max_length=20)
@@ -411,7 +414,7 @@ class Scenes(models.Model):
     customize2 = models.CharField(max_length=50)
 
     def init1(self, *args):
-        # super(Ltecell, self).__init__()
+        # super(Scenes, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -451,6 +454,7 @@ class Scenes(models.Model):
                 self.sceneslevel = args[33]
                 self.customize1 = args[34]
                 self.customize2 = args[35]
+        return self
 
 
 class Enodeb(models.Model):
@@ -521,7 +525,7 @@ class Enodeb(models.Model):
     customize10 = models.CharField(max_length=50)
 
     def init1(self, *args):
-        # super(Ltecell, self).__init__()
+        # super(Enodeb, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -590,6 +594,7 @@ class Enodeb(models.Model):
                 self.customize8 = args[62]
                 self.customize9 = args[63]
                 self.customize10 = args[64]
+        return self
 
 
 class Rru(models.Model):
@@ -608,7 +613,7 @@ class Rru(models.Model):
     txrxtypes = models.CharField(max_length=20)
 
     def init1(self, *args):
-        # super(Ltecell, self).__init__()
+        # super(Rru, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -625,7 +630,7 @@ class Rru(models.Model):
                 self.rrutypes = args[10]
                 self.rruport = args[11]
                 self.txrxtypes = args[12]
-
+        return self
 
 class Bbu(models.Model):
     bbuid = models.CharField(max_length=50)
@@ -641,7 +646,7 @@ class Bbu(models.Model):
     unittype = models.CharField(max_length=50)
 
     def init1(self, *args):
-        # super(Ltecell, self).__init__()
+        # super(Bbu, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -656,6 +661,7 @@ class Bbu(models.Model):
                 self.enodebid3 = args[8]
                 self.physicalstationid = args[9]
                 self.unittype = args[10]
+        return self
 
 
 class Physicalstation(models.Model):
@@ -671,7 +677,7 @@ class Physicalstation(models.Model):
     isboundary = models.CharField(max_length=20)
 
     def init1(self, *args):
-        # super(Ltecell, self).__init__()
+        # super(Physicalstation, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -685,3 +691,4 @@ class Physicalstation(models.Model):
                 self.lat = args[7]
                 self.altitude = args[8]
                 self.isboundary = args[9]
+        return self
