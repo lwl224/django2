@@ -375,6 +375,7 @@ class Cell2scenes(models.Model):
                 self.networktype = args[4]
         return self
 
+
 class Scenes(models.Model):
     province = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
@@ -474,6 +475,7 @@ class Enodeb(models.Model):
     sgwid = models.CharField(max_length=30)
     factory = models.CharField(max_length=20)
     worktypes = models.CharField(max_length=20)
+    updatatime = models.CharField(max_length=30)
     antennanumb = models.CharField(max_length=20)
     antennanumb2g = models.CharField(max_length=20)
     antennanumb3g = models.CharField(max_length=20)
@@ -545,55 +547,57 @@ class Enodeb(models.Model):
                 self.sgwid = args[13]
                 self.factory = args[14]
                 self.worktypes = args[15]
-                self.antennanumb = args[16]
-                self.antennanumb2g = args[17]
-                self.antennanumb3g = args[18]
-                self.antennanumb23g = args[19]
-                self.physicalstationnumb = args[20]
-                self.physicalstationnumb2g = args[21]
-                self.physicalstationnumb3g = args[22]
-                self.physicalstationnumb23g = args[23]
-                self.sourcetypes = args[24]
-                self.commonmode = args[25]
-                self.unittype = args[26]
-                self.hwversion = args[27]
-                self.swversion = args[28]
-                self.swbugversion = args[29]
-                self.s1ubandwidth = args[30]
-                self.enodebbandwidth1 = args[31]
-                self.enodebbandwidth2 = args[32]
-                self.lon = args[33]
-                self.lat = args[34]
-                self.Carrier = args[35]
-                self.Sectortype = args[36]
-                self.bbunumb = args[37]
-                self.rrunumb = args[38]
-                self.rrunumb24G = args[39]
-                self.repeater = args[40]
-                self.bstype = args[41]
-                self.location = args[42]
-                self.bslevel = args[43]
-                self.mcc = args[44]
-                self.mnc = args[45]
-                self.enodebcell = args[46]
-                self.enodebip = args[47]
-                self.towerdelivery = args[48]
-                self.towerlocation = args[49]
-                self.towerlevel = args[50]
-                self.sharetelecom = args[51]
-                self.builder = args[52]
-                self.share = args[53]
-                self.sharebs = args[54]
-                self.customize1 = args[55]
-                self.customize2 = args[56]
-                self.customize3 = args[57]
-                self.customize4 = args[58]
-                self.customize5 = args[59]
-                self.customize6 = args[60]
-                self.customize7 = args[61]
-                self.customize8 = args[62]
-                self.customize9 = args[63]
-                self.customize10 = args[64]
+                self.updatatime = args[16]
+                self.antennanumb = args[17]
+                self.antennanumb2g = args[18]
+                self.antennanumb3g = args[19]
+                self.antennanumb23g = args[20]
+                self.physicalstationnumb = args[21]
+                self.physicalstationnumb2g = args[22]
+                self.physicalstationnumb3g = args[23]
+                self.physicalstationnumb23g = args[24]
+                self.sourcetypes = args[25]
+                self.commonmode = args[26]
+                self.unittype = args[27]
+                self.hwversion = args[28]
+                self.swversion = args[29]
+                self.swbugversion = args[30]
+                self.s1ubandwidth = args[31]
+                self.enodebbandwidth1 = args[32]
+                self.enodebbandwidth2 = args[33]
+                self.lon = args[34]
+                self.lat = args[35]
+                self.Carrier = args[36]
+                self.Sectortype = args[37]
+                self.bbunumb = args[38]
+                self.rrunumb = args[39]
+                self.rrunumb24G = args[40]
+                self.repeater = args[41]
+                self.bstype = args[42]
+                self.location = args[43]
+                self.bslevel = args[44]
+                self.mcc = args[45]
+                self.mnc = args[46]
+                self.enodebcell = args[47]
+                self.enodebip = args[48]
+                self.towerdelivery = args[49]
+                self.towerlocation = args[50]
+                self.towerlevel = args[51]
+                self.sharetelecom = args[52]
+                self.builder = args[53]
+                self.share = args[54]
+                self.sharebs = args[55]
+                self.customize1 = args[56]
+                self.customize2 = args[57]
+                self.customize3 = args[58]
+                self.customize4 = args[59]
+                self.customize5 = args[60]
+                self.customize6 = args[61]
+                self.customize7 = args[62]
+                self.customize8 = args[63]
+                self.customize9 = args[64]
+                self.customize10 = args[65]
+
         return self
 
 
@@ -631,6 +635,7 @@ class Rru(models.Model):
                 self.rruport = args[11]
                 self.txrxtypes = args[12]
         return self
+
 
 class Bbu(models.Model):
     bbuid = models.CharField(max_length=50)
