@@ -316,8 +316,8 @@ class Antenna(models.Model):
     verticalrange = models.CharField(max_length=20)
     install = models.CharField(max_length=20)
 
-    def __init__(self, *args):
-        super(Antenna, self).__init__()
+    def init1(self, *args):
+        # super(Ltecell, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -410,8 +410,8 @@ class Scenes(models.Model):
     customize1 = models.CharField(max_length=50)
     customize2 = models.CharField(max_length=50)
 
-    def __init__(self, *args):
-        super(Scenes, self).__init__()
+    def init1(self, *args):
+        # super(Ltecell, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -520,8 +520,8 @@ class Enodeb(models.Model):
     customize9 = models.CharField(max_length=50)
     customize10 = models.CharField(max_length=50)
 
-    def __init__(self, *args):
-        super(Enodeb, self).__init__()
+    def init1(self, *args):
+        # super(Ltecell, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -607,8 +607,8 @@ class Rru(models.Model):
     rruport = models.CharField(max_length=20)
     txrxtypes = models.CharField(max_length=20)
 
-    def __init__(self, *args):
-        super(Rru, self).__init__()
+    def init1(self, *args):
+        # super(Ltecell, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -640,8 +640,8 @@ class Bbu(models.Model):
     physicalstationid = models.CharField(max_length=50)
     unittype = models.CharField(max_length=50)
 
-    def __init__(self, *args):
-        super(Bbu, self).__init__()
+    def init1(self, *args):
+        # super(Ltecell, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
@@ -670,8 +670,8 @@ class Physicalstation(models.Model):
     altitude = models.CharField(max_length=20)
     isboundary = models.CharField(max_length=20)
 
-    def __init__(self, *args):
-        super(Physicalstation, self).__init__()
+    def init1(self, *args):
+        # super(Ltecell, self).__init__()
         if args:
             if type(args[0]) is list:  # object is being created, thus no primary key field yet
                 args = args[0]
