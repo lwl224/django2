@@ -69,13 +69,13 @@ def loaddata(classname='Ltecell', filename='cell.xlsx', list1=[14, 15]):
 
 def initialization():
     time1 = time.time()
-    loaddata('Bbu', 'data/bbu.xlsx', [6, 7])
-    loaddata('Enodeb', 'data/enodeb.xlsx', [33, 34])
-    loaddata('Ltecell','data/cell.xlsx',[14,15])
-    loaddata('Antenna', 'data/antenna.xlsx', [5, 6, 10, 11])
-    loaddata('Cell2scenes', 'data/cell2scenes.xlsx', [0])
-    loaddata('Scenes', 'data/scenes.xlsx', [8, 9, 14, 15])
-    loaddata('Rru', 'data/rru.xlsx', [5, 6])
-    loaddata('Physicalstation', 'data/physicalstation.xlsx', [6, 7])
+    loaddata('Bbu', 'tilt/data/bbu.xlsx', [6, 7])
+    loaddata('Enodeb', 'tilt/data/enodeb.xlsx', [33, 34])
+    loaddata('Ltecell','tilt/data/cell.xlsx',[14,15])
+    loaddata('Antenna', 'tilt/data/antenna.xlsx', [5, 6, 10, 11])
+    loaddata('Cell2scenes', 'tilt/data/cell2scenes.xlsx', [0])
+    loaddata('Scenes', 'tilt/data/scenes.xlsx', [8, 9, 14, 15])
+    loaddata('Rru', 'tilt/data/rru.xlsx', [5, 6])
+    loaddata('Physicalstation', 'tilt/data/physicalstation.xlsx', [6, 7])
     time2 = time.time()
     print "导入数据耗时" + str(time2 - time1) + "秒,"
