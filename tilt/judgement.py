@@ -122,7 +122,7 @@ def makedata():
         'host': '127.0.0.1',
         'user': 'lwl224',
         'passwd': '123456',
-        'port': 3306,
+        'port': 3389,
         'db': 'lwl224',
         'use_unicode': 'True',
         'charset': 'utf8'
