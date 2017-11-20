@@ -10,6 +10,8 @@ from django.contrib import auth
 from django.contrib.auth.models import User
 from books.models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from tilt import loaddata
+
 
 def search_form(request):
     return render_to_response('search_form.html')
@@ -139,3 +141,8 @@ def view_cell(request):
         'cell_list': cell_list,
     }
     return render(request, 'management/view_cell_list.html', content)
+
+
+def initialization(request):
+    loaddata.initialization()
+    return HttpResponseRedirect(reverse('homepage'))

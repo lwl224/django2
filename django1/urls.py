@@ -37,6 +37,6 @@ urlpatterns = [
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^set_password/$', views.set_password, name='set_password'),
     url(r'^view_cell/$', views.view_cell, name='view_cell'),
-    url(r'^loaddata/$', loaddata.initialization, name='init'),
+    url(r'^loaddata/$', views.initialization, name='init'),
 
 ]
