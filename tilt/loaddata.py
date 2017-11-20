@@ -67,14 +67,15 @@ def loaddata(classname='Ltecell', filename='cell.xlsx', list1=[14, 15]):
         print n
         theObj.objects.bulk_create(WorkList)
 
-time1 = time.time()
-loaddata('Bbu', 'data/bbu.xlsx', [6, 7])
-loaddata('Enodeb', 'data/enodeb.xlsx', [33, 34])
-loaddata('Ltecell','data/cell.xlsx',[14,15])
-loaddata('Antenna', 'data/antenna.xlsx', [5, 6, 10, 11])
-loaddata('Cell2scenes', 'data/cell2scenes.xlsx', [0])
-loaddata('Scenes', 'data/scenes.xlsx', [8, 9, 14, 15])
-loaddata('Rru', 'data/rru.xlsx', [5, 6])
-loaddata('Physicalstation', 'data/physicalstation.xlsx', [6, 7])
-time2 = time.time()
-print "导入数据耗时" + str(time2 - time1) + "秒,"
+def initialization():
+    time1 = time.time()
+    loaddata('Bbu', 'data/bbu.xlsx', [6, 7])
+    loaddata('Enodeb', 'data/enodeb.xlsx', [33, 34])
+    loaddata('Ltecell','data/cell.xlsx',[14,15])
+    loaddata('Antenna', 'data/antenna.xlsx', [5, 6, 10, 11])
+    loaddata('Cell2scenes', 'data/cell2scenes.xlsx', [0])
+    loaddata('Scenes', 'data/scenes.xlsx', [8, 9, 14, 15])
+    loaddata('Rru', 'data/rru.xlsx', [5, 6])
+    loaddata('Physicalstation', 'data/physicalstation.xlsx', [6, 7])
+    time2 = time.time()
+    print "导入数据耗时" + str(time2 - time1) + "秒,"

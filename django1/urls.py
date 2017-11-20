@@ -18,6 +18,7 @@ from django.contrib import admin
 from django1.views import *
 from blog.views import *
 from books import views
+from tilt import loaddata
 # from django.contrib.staticfiles import views
 from django.contrib import admin
 
@@ -35,9 +36,7 @@ urlpatterns = [
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^set_password/$', views.set_password, name='set_password'),
-    url(r'^view_cell/$', views.view_cell,name='view_cell'),
-
-
-
+    url(r'^view_cell/$', views.view_cell, name='view_cell'),
+    url(r'^loaddata/$', loaddata.initialization, name='init'),
 
 ]
